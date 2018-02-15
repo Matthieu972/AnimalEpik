@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Conveyances list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for conveyance in conveyances %}
+            <tr>
+                <td><a href="{{ path('conveyance_show', { 'id': conveyance.id }) }}">{{ conveyance.id }}</a></td>
+                <td>{{ conveyance.name }}</td>
+                <td>{{ conveyance.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('conveyance_show', { 'id': conveyance.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('conveyance_edit', { 'id': conveyance.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('conveyance_new') }}">Create a new conveyance</a>
+        </li>
+    </ul>
+{% endblock %}
