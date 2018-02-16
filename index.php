@@ -1,3 +1,3 @@
 <?php
 
-echo 'CECI EST MON INDEX';
+echo 'CECI EST MON INDEX !';
