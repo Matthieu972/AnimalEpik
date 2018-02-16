@@ -1,15 +1,16 @@
 <?php
 declare(strict_types=1);
+require_once('Email.php');
 
 use PHPUnit\Framework\TestCase;
 
-final class PersonTest extends TestCase
+final class EmailTest extends TestCase
 {
     public function testCanBeCreatedFromValidEmailAddress(): void
     {
         $this->assertInstanceOf(
-            Person::class,
-            Person::fromString('user@example.com')
+            Email::class,
+            Email::fromString('user@example.com')
         );
     }
 
@@ -17,14 +18,14 @@ final class PersonTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        Person::fromString('invalid');
+        Email::fromString('invalid');
     }
 
     public function testCanBeUsedAsString(): void
     {
         $this->assertEquals(
             'user@example.com',
-            Person::fromString('user@example.com')
+            Email::fromString('user@example.com')
         );
     }
 }

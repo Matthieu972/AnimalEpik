@@ -1,8 +1,6 @@
 language: php
 
-php:
-  - '7.0'
-  - '7.1'
+php: '7.1'
 
 before_script:
   - composer require phpunit/phpunit --prefer-source
@@ -10,9 +8,9 @@ before_script:
 
 script:
   - docker run -v $PWD:/app phpqa/php-cs-fixer fix --show-progress=estimating --verbose .
-  - docker run -v $PWD:/app phpqa/security-checker security:check
-  - docker run -v $PWD:/app phpqa/phpcs .
-  - ./vendor/bin/phpunit --bootstrap vendor/autoload.php PersonTest
+#  - docker run -v $PWD:/app phpqa/security-checker security:check
+#  - docker run -v $PWD:/app phpqa/phpcs .
+  - ./vendor/bin/phpunit --bootstrap vendor/autoload.php EmailTest
 
 notifications:
   email:

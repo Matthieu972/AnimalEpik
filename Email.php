@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-final class Person
+final class Email
 {
     private $email;
 
