@@ -1,0 +1,12 @@
+{
+  "name": "matthieu972.github.io",
+  "license": "MIT",
+  "config": {
+    "platform": {
+      "php": "7.0.25"
+    }
+  },
+  "require": {
+    "php": ">=7"
+  }
+}
