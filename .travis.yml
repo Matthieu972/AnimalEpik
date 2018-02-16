@@ -9,6 +9,7 @@ before_script:
 
 script:
   - docker run -v $PWD:/app phpqa/security-checker security:check
+  - docker run -v $PWD:/app phpqa/phpcs .
 
 notifications:
   email:
