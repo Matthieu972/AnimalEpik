@@ -20,7 +20,7 @@ notifications:
 deploy:
   provider: heroku
   api_key:
-    secure: 9589c25b-ef12-438f-8ab6-712594e973b0
+    secure: "9589c25b-ef12-438f-8ab6-712594e973b0"
   app: animalepik
   on:
     repo: Matthieu972/AnimalEpik
